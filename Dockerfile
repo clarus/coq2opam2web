@@ -18,6 +18,7 @@ RUN opam install -y opam-lib
 RUN opam install -y js_of_ocaml uri cow.0.8.1
 
 # OpamFu trunk
+# The trunk is required to prevent a bug running opam2web with missing dependencies.
 WORKDIR /root
 RUN git clone https://github.com/ocamllabs/opamfu.git
 WORKDIR /root/opamfu
@@ -32,11 +33,11 @@ RUN git checkout 1.3
 RUN eval `opam config env`; make
 RUN eval `opam config env`; make install
 
-# Add the Opam Coq repository
+# Opam Coq repository
 RUN opam repo add coq https://github.com/braibant/opam-coq-repo.git
 
 # Coq2Opam2Web
 WORKDIR /root
 RUN git clone https://github.com/clarus/coq2opam2web.git
 WORKDIR /root/coq2opam2web
-RUN eval `opam config env`; opam2web --output website/ local:coq
+RUN eval `opam config env`; OCAMLRUNPARAM=b opam2web --output website/ local:coq
