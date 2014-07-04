@@ -2,6 +2,8 @@
 
 Files to build the website for the Opam packages of Coq.
 
-Install [opam2web](https://github.com/ocaml/opam2web) and run:
+Run the `Dockerfile` with [Docker](http://www.docker.com/):
 
-    opam2web --output website/
+    docker build .
+
+The website will be in the container in `/root/coq2opam2web/website/`.
