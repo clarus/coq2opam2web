@@ -38,7 +38,7 @@ let create ~title ~header ~body ~depth =
     "ext/js/google-code-prettify/prettify.css";
   ] in
   let js_files = [
-    "ext/js/jquery.js";
+    "ext/js/jquery.min.js";
     "ext/js/google-code-prettify/prettify.js";
     "ext/js/bootstrap.min.js";
     "ext/js/site.js";

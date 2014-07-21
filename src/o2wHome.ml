@@ -51,10 +51,12 @@ let to_html ~content_dir ~statistics ~popularity universe =
         dates_fn universe.max_packages in
     let updated_items = List.map mk_update_li last_updates in
     <:html<
-      <div class="span4">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
         <table class="table table-striped">
           <thead>
-            <tr><th colspan="2">New packages</th></tr>
+            <tr><th colspan="2">Last packages</th></tr>
           </thead>
           <tbody>
             $list: updated_items$
@@ -67,6 +69,8 @@ let to_html ~content_dir ~statistics ~popularity universe =
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="col-md-2">
       </div>
     >>
   in

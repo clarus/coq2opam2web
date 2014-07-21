@@ -86,8 +86,12 @@ let make_website user_options universe =
       [ popularity; date ]
   in
   include_files user_options.out_dir user_options.files_dir;
-  let about_page =
-    let filename = Printf.sprintf "%s/doc/About.md" content_dir in
+  let home_index = O2wHome.to_html
+    ~content_dir ~statistics ~popularity universe in
+  let package_index =
+    to_html ~active:"name" ~compare_pkg:O2wPackage.compare_alphanum universe in
+  let publish_page =
+    let filename = Printf.sprintf "%s/publish.md" content_dir in
     try
       let filename = OpamFilename.of_string filename in
       let contents = OpamFilename.read filename in
@@ -101,11 +105,21 @@ let make_website user_options universe =
     with _ ->
       OpamGlobals.warning "%s is not available." filename;
       <:html< >> in
-  let home_index = O2wHome.to_html
-    ~content_dir ~statistics ~popularity universe in
-  let package_index =
-    to_html ~active:"name" ~compare_pkg:O2wPackage.compare_alphanum universe in
-  let publish_index = O2wPublish.to_html in
+    let about_page =
+      let filename = Printf.sprintf "%s/about.md" content_dir in
+      try
+        let filename = OpamFilename.of_string filename in
+        let contents = OpamFilename.read filename in
+        let contents = Cow.Markdown_github.of_string contents in
+        let contents = Cow.Markdown.to_html contents in
+        <:html<
+          <div class="container">
+          $contents$
+          </div>
+        >>
+      with _ ->
+        OpamGlobals.warning "%s is not available." filename;
+        <:html< >> in
   O2wTemplate.generate
     ~content_dir ~out_dir:user_options.out_dir
     ([
@@ -116,7 +130,7 @@ let make_website user_options universe =
         menu_item = Internal (1, package_index) };
 
       { menu_link = { text="Publish"; href="publish.html" };
-        menu_item = Internal (0, publish_index) };
+        menu_item = Internal (0, Template.serialize publish_page) };
 
       { menu_link = { text="About"; href="about.html" };
         menu_item = Internal (0, Template.serialize about_page) };
