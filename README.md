@@ -6,8 +6,8 @@ Run the `Dockerfile` with [Docker](http://www.docker.com/):
 
     docker build .
 
-Connect to the generate image and run:
+Connect to the generated image and run:
 
     opam2web --output website/ local:coq
 
-The website will be in `/root/coq2opam2web/website/`.
+The website will be in `website/`.
