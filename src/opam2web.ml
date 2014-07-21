@@ -52,7 +52,6 @@ let make_website user_options universe =
   Printf.printf "++ Building the package pages.\n%!";
   let pages = O2wUniverse.to_pages ~statistics universe in
   Printf.printf "++ Building the documentation pages.\n%!";
-  let menu_of_doc = O2wDocumentation.to_menu ~content_dir in
   let criteria = ["name"; "popularity"; "date"] in
   let criteria_nostats = ["name"; "date"] in
   let sortby_links = match statistics with
@@ -106,18 +105,18 @@ let make_website user_options universe =
     ~content_dir ~statistics ~popularity universe in
   let package_index =
     to_html ~active:"name" ~compare_pkg:O2wPackage.compare_alphanum universe in
-  let doc_menu = menu_of_doc ~pages:O2wGlobals.documentation_pages in
+  let publish_index = O2wPublish.to_html in
   O2wTemplate.generate
     ~content_dir ~out_dir:user_options.out_dir
     ([
       { menu_link = { text="Home"; href="/" };
         menu_item = Internal (0, home_index) };
 
-      { menu_link = { text="Packages"; href=packages_prefix^"/" };
+      { menu_link = { text="All packages"; href=packages_prefix^"/" };
         menu_item = Internal (1, package_index) };
 
-      { menu_link = { text="Documentation"; href="doc/" };
-        menu_item = Submenu doc_menu; };
+      { menu_link = { text="Publish"; href="publish.html" };
+        menu_item = Internal (0, publish_index) };
 
       { menu_link = { text="About"; href="about.html" };
         menu_item = Internal (0, Template.serialize about_page) };
