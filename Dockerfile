@@ -40,4 +40,3 @@ RUN opam repo add coq https://github.com/braibant/opam-coq-repo.git
 WORKDIR /root
 RUN git clone https://github.com/clarus/coq2opam2web.git
 WORKDIR /root/coq2opam2web
-RUN eval `opam config env`; OCAMLRUNPARAM=b opam2web --output website/ local:coq
