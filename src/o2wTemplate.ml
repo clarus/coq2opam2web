@@ -33,11 +33,8 @@ let prepend_root (depth: int) (src: string): string =
 let create ~title ~header ~body ~footer ~depth =
   let title = <:html< $str:title$ >> in
   let css_files = [
-    "ext/css/bootstrap.css";
-    "ext/css/bootstrap-responsive.css";
-    "ext/css/docs.css";
+    "ext/css/bootstrap.min.css";
     "ext/js/google-code-prettify/prettify.css";
-    "ext/css/site.css";
   ] in
   let js_files = [
     "ext/js/jquery.js";
