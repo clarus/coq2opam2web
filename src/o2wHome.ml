@@ -62,7 +62,7 @@ let to_html ~content_dir ~statistics ~popularity universe =
             $list: updated_items$
             <tr>
               <td class="btn-more" colspan="2">
-                <a href=$str:packages_prefix^"/index-date.html"$>
+                <a href=$str:packages_prefix^"/"$>
                   <button class="btn btn-small">all packages</button>
                 </a>
               </td>
