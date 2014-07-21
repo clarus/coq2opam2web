@@ -1,28 +1,28 @@
 <t:seq xmlns:t="http://ocaml.org/xmlns/template#">
-<!-- Main hero unit for a primary marketing message or call to action -->
-<div class="hero-unit">
-  <h1>
-    <img style="width: 3em;vertical-align:middle;" src="ext/img/logo.png"/>
-    &#160;Coq Eggs
-  </h1>
-  <p><em>Collaborative work made fun.</em></p>
-  <br/>
-  <p><strong>Coq Eggs</strong> is the <strong>dead easy</strong> repository for Coq libraries.</p>
-  <form class="form-search">
-    <div class="input-append">
-      <input id="search" class="search-query" type="text" placeholder="Search packages" />
-      <button id="search-button" class="btn add-on">
-        <i class="icon-search"> </i>
-      </button>
-    </div>
-  </form>
-  <p>First install <a href="http://opam.ocaml.org/">OPAM</a> and then run:</p>
-  <pre class="prettyprint lang-sh">
+<div class="row header">
+  <div class="col-md-4">
+    <img class="img-responsive" src="ext/img/logo.png"/>
+    <p class="text-center"><em>Collaborative work made simple.</em></p>
+  </div>
+  <div class="col-md-8">
+    <h1>Coq Eggs</h1>
+    <p class="lead">The <strong>dead easy</strong> repository for Coq libraries.</p>
+    <p>Install <a href="http://opam.ocaml.org/">OPAM</a> and run:</p>
+    <pre class="prettyprint lang-sh">
 opam install coq-eggs            # setup Coq Eggs
 opam search that-super-library   # search for a library
 opam install that-super-library  # install a library
 </pre>
-  <button type="button" class="btn btn-primary btn-lg">All packages</button>
+    <button type="button" class="btn btn-primary btn-lg">All packages</button>
+    <form class="form-search">
+      <div class="input-append">
+        <input id="search" class="search-query" type="text" placeholder="Search packages" />
+        <button id="search-button" class="btn add-on">
+          <i class="icon-search"> </i>
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <hr />

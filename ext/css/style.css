@@ -1,0 +1,16 @@
+.header h1 {
+  font-size: 63px;
+}
+
+.header p {
+  font-size: 21px;
+  font-weight: 200;
+}
+
+.header pre {
+  font-size: 16px;
+}
+
+.lead {
+  line-height: 2;
+}

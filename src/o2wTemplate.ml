@@ -34,6 +34,7 @@ let create ~title ~header ~body ~depth =
   let title = <:html< $str:title$ >> in
   let css_files = [
     "ext/css/bootstrap.min.css";
+    "ext/css/style.css";
     "ext/js/google-code-prettify/prettify.css";
   ] in
   let js_files = [
