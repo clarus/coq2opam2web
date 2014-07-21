@@ -30,7 +30,7 @@ let prepend_root (depth: int) (src: string): string =
   in
   if src <> "" && src.[0] = '/' then src else aux src depth
 
-let create ~title ~header ~body ~footer ~depth =
+let create ~title ~header ~body ~depth =
   let title = <:html< $str:title$ >> in
   let css_files = [
     "ext/css/bootstrap.min.css";
@@ -71,7 +71,6 @@ let create ~title ~header ~body ~footer ~depth =
     "head",  Template.serialize head_html;
     "header",header;
     "body",  body;
-    "footer",footer;
     "js",    Template.serialize js_html;
   ]
 
@@ -128,35 +127,6 @@ let make_nav (active, depth) pages =
     </ul>
   >>
 
-let make_footer depth =
-  let icon file = prepend_root depth ("ext/img/" ^ file) in
-  Template.serialize <:html<
-    <div class="icons">
-    <div class="icon">
-      <a href="https://github.com/ocaml/opam2web">
-      <img src=$str:icon "github.png"$ />
-      </a>
-    </div>
-    <div class="icon">
-      <a href="http://www.ocamlpro.com/">
-      <img src=$str:icon "ocamlpro.png"$ />
-      </a>
-    </div>
-    <div class="icon">
-      <a href="http://www.ocaml.org/">
-      <img src=$str:icon "ocaml.png"$ />
-      </a>
-    </div>
-    </div>
-    <div class="copyright">
-      <small>
-      Generated using <a href="http://github.com/ocaml/opam2web">opam2web</a>,
-      courtesy of <a href="http://ocamlpro.com">OCamlPro</a>.
-      <a href="http://opam.ocamlpro.com">Commercial support</a>.
-      </small>
-    </div>
-  >>
-
 let generate ~content_dir ~out_dir menu pages =
   Printf.printf "++ Generating html files:\n%!";
   (* Filter out external links from the menu pages to generate *)
@@ -185,7 +155,6 @@ let generate ~content_dir ~out_dir menu pages =
   let aux page =
     Printf.printf "\r[%-5d/%d] %s %40s%!" !c n page.page_link.href ""; incr c;
     let header = make_nav (page.page_link, page.page_depth) menu in
-    let footer = make_footer page.page_depth in
     let suffix =
       if is_dir page.page_link.href
       then (OpamFilename.(mkdir (Dir.of_string
@@ -199,7 +168,6 @@ let generate ~content_dir ~out_dir menu pages =
       "head",  (default <:html< >>,      Optional);
       "header",(default <:html< >>,      Optional);
       "body",  (mandatory (),            Required);
-      "footer",(default <:html< >>,      Optional);
       "js",    (default <:html< >>,      Optional);
     ]}) in
     let chan = open_out path in
@@ -208,7 +176,7 @@ let generate ~content_dir ~out_dir menu pages =
     List.iter (Cow.Xml.output xml_out)
       (Template.generate content_dir template
          (create
-            ~header ~footer
+            ~header
             ~title:page.page_link.text
             ~body:page.page_contents
             ~depth:page.page_depth));
