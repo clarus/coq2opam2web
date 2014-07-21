@@ -37,6 +37,7 @@ RUN eval `opam config env`; make install
 RUN opam repo add coq https://github.com/braibant/opam-coq-repo.git
 
 # Coq2Opam2Web
+RUN apt-get install -y inotify-tools
 WORKDIR /root
 RUN git clone https://github.com/clarus/coq2opam2web.git
 WORKDIR /root/coq2opam2web

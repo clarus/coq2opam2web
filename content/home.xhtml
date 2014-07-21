@@ -5,11 +5,18 @@
     <img style="width: 3em;vertical-align:middle;" src="ext/img/egg.jpg"/>
     &#160;Coq Eggs
   </h1>
+  <p><em>Collaborative work made fun.</em></p>
   <br/>
-  <p>OPAM is a source-based package manager for OCaml. It supports multiple simultaneous
-    compiler installations, flexible package constraints, and a Git-friendly development
-    workflow. Managing your OCaml installation can be as simple as:</p>
-  <pre class="prettyprint lang-sh linenums">
+  <p><strong>Coq Eggs</strong> is the <strong>dead simple</strong> repository for Coq libraries.</p>
+  <form class="span3 form-search">
+    <div class="input-append">
+      <input id="search" class="search-query" type="text" placeholder="Search packages" />
+      <button id="search-button" class="btn add-on">
+        <i class="icon-search"> </i>
+      </button>
+    </div>
+  </form>
+  <pre class="prettyprint lang-sh">
 opam list -a         # List the available packages
 opam install lwt     # Install LWT
 opam update          # Update the package list

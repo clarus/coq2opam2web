@@ -10,4 +10,6 @@ Connect to the generated image and run:
 
     make
 
-The website will be in `website/`.
+The website will be in `website/`. In development mode, if you want to rebuild the website as files are modified, run:
+
+    make watch
