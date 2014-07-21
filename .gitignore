@@ -1,1 +1,5 @@
 website/
+src/_build/
+src/search.byte
+src/search.js
+src/version.ml

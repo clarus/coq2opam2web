@@ -10,6 +10,9 @@ build-tool:
 
 build-website:
 	src/_build/opam2web.native --output website/ local:coq
+	cp -Rf ext website/
+	cp -f src/search.js website/ext/js/
+	chmod -R a+r website
 
 install:
 	cd src && $(MAKE) install
