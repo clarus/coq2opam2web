@@ -13,22 +13,15 @@ opam install coq-eggs            # setup Coq Eggs
 opam search that-super-library   # search for a library
 opam install that-super-library  # install a library
 </pre>
-    <button type="button" class="btn btn-primary btn-lg">All packages</button>
-    <form class="form-search">
-      <div class="input-append">
-        <input id="search" class="search-query" type="text" placeholder="Search packages" />
-        <button id="search-button" class="btn add-on">
-          <i class="icon-search"> </i>
-        </button>
-      </div>
+    <form class="form-inline">
+      <input class="form-control" type="search" placeholder="Search packages..." />
+      <button class="btn btn-primary btn-lg">Search</button>
     </form>
   </div>
 </div>
 
 <hr />
 <div class="row">
-  <t:insert name="stats" />
   <t:insert name="updates_last10" />
-  <t:insert name="packages_top10" />
 </div>
 </t:seq>

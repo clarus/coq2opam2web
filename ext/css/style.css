@@ -11,6 +11,17 @@
   font-size: 16px;
 }
 
-.lead {
-  line-height: 2;
+.header input[type="search"] {
+    margin: 20px 0px;
+    min-width: 60%;
+    white-space: nowrap;
+    height: 55px;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.header .btn-lg {
+  height: 55px;
+  font-size: 16px;
 }
