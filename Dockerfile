@@ -17,11 +17,12 @@ RUN apt-get install -y gawk
 RUN opam install -y opam-lib
 RUN opam install -y js_of_ocaml uri cow.0.8.1
 
-# OpamFu trunk
+# OpamFu trunk 7b4bc201bbbecb81dae75f7f8f70e2aed11c9708
 # The trunk is required to prevent a bug running opam2web with missing dependencies.
 WORKDIR /root
 RUN git clone https://github.com/ocamllabs/opamfu.git
 WORKDIR /root/opamfu
+RUN git checkout 7b4bc201bbbecb81dae75f7f8f70e2aed11c9708
 RUN eval `opam config env`; make build
 RUN eval `opam config env`; make install
 
