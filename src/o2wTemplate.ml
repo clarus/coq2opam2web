@@ -122,7 +122,7 @@ let make_nav (active, depth) pages =
       >>
   in
   Template.serialize <:html<
-    <ul class="nav">
+    <ul class="nav navbar-nav navbar-right">
       $list: List.map make_item pages$
     </ul>
   >>

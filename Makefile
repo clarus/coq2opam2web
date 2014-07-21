@@ -19,3 +19,4 @@ install:
 
 clean:
 	cd src && $(MAKE) clean
+	rm -Rf website
