@@ -8,6 +8,6 @@ Run the `Dockerfile` with [Docker](http://www.docker.com/):
 
 Connect to the generated image and run:
 
-    opam2web --output website/ local:coq
+    make
 
 The website will be in `website/`.
