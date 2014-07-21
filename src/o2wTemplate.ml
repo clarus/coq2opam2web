@@ -47,7 +47,7 @@ let create ~title ~header ~body ~footer ~depth =
   let head_html =
     <:html<
       <meta name="generator" content=$str: "opam2web " ^ Version.string$ />
-      <link rel="icon" type="image/png" href="/ext/img/favicon.png" />
+      <link rel="icon" type="image/png" href="/ext/img/logo.png" />
     >>@(List.flatten (List.map (fun f ->
       <:html< <link href="$str: prepend_root f$" rel="stylesheet" /> >>
     ) css_files))
