@@ -4,14 +4,10 @@ Files to build the website for the Opam packages of Coq.
 
 Run the `Dockerfile` with [Docker](http://www.docker.com/):
 
-    docker build .
+    docker.io build --tag=coq-eggs .
 
-Connect to the generated image and run:
+Launch the generated image:
 
-    make
+    docker.io run -ti -p 8000:8000 coq-eggs
 
-The website will be in `website/`.
-
-If you want to rebuild the website as files are modified run:
-
-    make watch
+It will run a web server on `http://localhost:8000/` with the Coq Eggs website.
