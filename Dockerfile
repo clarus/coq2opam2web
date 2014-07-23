@@ -42,11 +42,12 @@ ADD bootstrap/variables.less /root/bootstrap-3.2.0/less/
 RUN grunt dist
 
 # Coq2Opam2Web
-WORKDIR /root
-RUN git clone https://github.com/clarus/coq2opam2web.git
-RUN cp bootstrap-3.2.0/dist/css/bootstrap.min.css coq2opam2web/ext/css/
+ADD . /root/coq2opam2web
 WORKDIR /root/coq2opam2web
+RUN cp /root/bootstrap-3.2.0/dist/css/bootstrap.min.css ext/css/
 RUN eval `opam config env`; make
 
-# To allow "eval `opam config env`; make watch"
-RUN apt-get install -y inotify-tools
+# Run a simple web server
+EXPOSE 8000
+WORKDIR /root/coq2opam2web/website
+CMD python -m SimpleHTTPServer

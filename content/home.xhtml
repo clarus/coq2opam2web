@@ -1,22 +1,28 @@
 <t:seq xmlns:t="http://ocaml.org/xmlns/template#">
-<div class="row header">
-  <div class="col-md-4">
-    <img class="img-responsive" src="ext/img/logo.png" alt="logo"/>
-    <p class="text-center"><em>Collaborative work made simple.</em></p>
-  </div>
-  <div class="col-md-8">
-    <h1>Coq Eggs</h1>
-    <p class="lead">The <strong>dead easy</strong> repository for Coq libraries.</p>
-    <p>Install <a href="http://opam.ocaml.org/">OPAM</a> and run:</p>
-    <pre class="prettyprint lang-sh">
-opam install coq-eggs            # setup Coq Eggs
-opam search that-super-library   # search for a library
-opam install that-super-library  # install a library
-</pre>
-    <form class="form-inline" action="todo">
-      <input class="form-control" type="search" placeholder="Search package..." />
-      <button class="btn btn-primary btn-lg">Search</button>
-    </form>
+<div class="header">
+  <div class="row">
+    <div class="col-md-5 hidden-xs hidden-sm">
+      <img class="img-responsive center-block" src="ext/img/logo.png" alt="logo"/>
+      <p class="text-center"><em>Collaborative work made simple.</em></p>
+    </div>
+    <div class="col-md-7">
+      <h1>Coq Eggs</h1>
+      <p class="lead">The <strong>dead easy</strong> repository for Coq libraries.</p>
+      <p>Install <a href="http://opam.ocaml.org/">OPAM</a> and run:</p>
+      <pre class="prettyprint lang-sh">
+  opam install coq-eggs            # setup Coq Eggs
+  opam search that-super-library   # search for a library
+  opam install that-super-library  # install a library
+  </pre>
+      <div class="row">
+        <div class="col-md-9">
+          <input class="form-control search" type="search" placeholder="Search package..." />
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary search">Search</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
