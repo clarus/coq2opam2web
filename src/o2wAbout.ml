@@ -7,8 +7,8 @@ let to_html =
 
     <h3>Contributors</h3>
     <ul>
-      <li><a href="http://braibant.github.io/">Thomas Braibant</a></li>
-      <li><a href="http://guillaume.claret.me/">Guillaume Claret</a></li>
-      <li><a href="http://www.msr-inria.fr/researchers/cyril-cohen/">Cyril Cohen</a></li>
+      <li>first contributor</li>
+      <li>second contributor</li>
+      <li>third contributor</li>
     </ul>
   >>
