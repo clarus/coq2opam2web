@@ -44,6 +44,7 @@ RUN grunt dist
 ADD . /root/coq2opam2web
 WORKDIR /root/coq2opam2web
 RUN cp /root/bootstrap-3.2.0/dist/css/bootstrap.min.css ext/css/
+RUN cp /root/bootstrap-3.2.0/dist/js/bootstrap.min.js ext/js/
 RUN eval `opam config env`; make
 
 # Run a simple web server
