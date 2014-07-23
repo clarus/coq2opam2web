@@ -37,8 +37,7 @@ WORKDIR /root
 RUN wget -qO- https://github.com/twbs/bootstrap/archive/v3.2.0.tar.gz |tar -xz
 WORKDIR /root/bootstrap-3.2.0
 RUN npm install
-ADD bootstrap/bootswatch.less /root/bootstrap-3.2.0/less/
-ADD bootstrap/variables.less /root/bootstrap-3.2.0/less/
+ADD bootstrap/ /root/bootstrap-3.2.0/less/
 RUN grunt dist
 
 # Coq2Opam2Web
