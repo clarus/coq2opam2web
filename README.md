@@ -10,4 +10,4 @@ Launch the generated image:
 
     docker run -ti -p 8000:8000 coq-eggs
 
-It will run a web server on (http://localhost:8000/) with the Coq Eggs website.
+It will run a web server on [http://localhost:8000/](http://localhost:8000/) with the Coq Eggs website.
