@@ -31,9 +31,6 @@ RUN git checkout 7b4bc201bbbecb81dae75f7f8f70e2aed11c9708
 RUN eval `opam config env`; make build
 RUN eval `opam config env`; make install
 
-# Opam Coq repository
-RUN opam repo add coq https://github.com/clarus/opam-coq-repo.git
-
 # Bootstrap
 RUN apt-get install -y npm
 RUN npm install -g grunt-cli
@@ -44,6 +41,9 @@ WORKDIR /root/bootstrap-3.2.0
 RUN npm install
 ADD bootstrap/ /root/bootstrap-3.2.0/less/
 RUN grunt dist
+
+# Opam Coq repository
+RUN opam repo add coq https://github.com/clarus/opam-coq-repo.git
 
 # Coq2Opam2Web
 ADD . /root/coq2opam2web
