@@ -17,7 +17,7 @@ let to_html =
         <p>The simplest way is to send an email to <a href="mailto:(λx.x@eggs.org)publish">(λx.x@eggs.org) publish</a> to publish a new package. You should give it a name, a version number and include the packages sources. Please precise any additional information you consider relevant (like the dependencies or the build process).</p>
 
         <h2>Making a pull-request</h2>
-        <p>If you know how to deal with <a href="http://opam.ocamlpro.com/">OPAM</a> packages, you can also send a pull-request with your package on the Coq Eggs <a href="https://github.com/coq/opam-coq-repo">repository</a>. For more informations you can read:</p>
+        <p>If you know how to deal with <a href="http://opam.ocamlpro.com/">OPAM</a> packages, you can also send a pull-request with your package on the Coq Eggs <a href="https://github.com/coq/opam-coq-repo">repository</a>. For more information you can read:</p>
         <ul>
           <li><a href="https://help.github.com/articles/using-pull-requests">using pull-requests</a> on GitHub</li>
           <li><a href="http://opam.ocaml.org/doc/Packaging.html">create an OPAM package</a></li>
