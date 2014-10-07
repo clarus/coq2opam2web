@@ -10,9 +10,9 @@
       <p class="lead">The <strong>dead easy</strong> repository for <a href="http://coq.inria.fr/">Coq</a> libraries.</p>
       <p>Install <a href="http://opam.ocaml.org/">OPAM</a> and run:</p>
       <pre class="prettyprint lang-sh">
-opam install coq-eggs            # setup Coq Eggs
-opam search that-super-library   # search for a library
-opam install that-super-library  # install a library
+opam repo add coq https://github.com/coq/opam-coq-repo.git
+opam search that-super-library
+opam install that-super-library
 </pre>
       <form action="packages/">
         <button class="btn btn-primary btn-lg" type="submit">All packages</button>
