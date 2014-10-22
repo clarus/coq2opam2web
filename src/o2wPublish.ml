@@ -3,9 +3,7 @@
 let to_html =
   <:html<
     <div class="row">
-      <div class="col-md-1">
-      </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
         <h1>Publish</h1>
         <p>The repository of <a href="/">Coq Eggs</a> uses <a href="http://opam.ocamlpro.com/">OPAM</a>, the package manager for OCaml. To upload a new Coq package you have two ways:</p>
         <ul>
@@ -24,8 +22,6 @@ let to_html =
         </ul>
         <p>The naming scheme for packages is <code>coq-package-name.MAJOR.MINOR.PATCH</code>. All names are prefixed by <code>coq-</code>. Names are in small caps, plus dashes or digits. The version number must contain exactly three numbers, and we try to follow the <a href="http://semver.org/">SemVer</a> convention.</p>
         <p>Only fixed releases are accepted (no development version). For your dependencies, be cautious that new versions may not be backward compatible. This is especially true for Coq itself, so prefer to use precise version numbers for it.</p>
-      </div>
-      <div class="col-md-1">
       </div>
     </div>
   >>
