@@ -12,7 +12,7 @@ RUN apt-get install -y opam
 RUN opam init
 
 # Opam2Web dependencies with explicit and fixed versions
-# Gawk is required for opam-lib
+# Gawk is required by opam-lib
 RUN apt-get install -y gawk
 RUN opam install -y ocamlfind.1.5.3 typerex.1.99.6-beta ocp-build.1.99.6-beta
 RUN opam install -y ocamlgraph.1.8.5 re.1.2.2 camlp4.4.01.0 cmdliner.0.9.5
@@ -31,7 +31,7 @@ RUN git checkout 7b4bc201bbbecb81dae75f7f8f70e2aed11c9708
 RUN eval `opam config env`; make build
 RUN eval `opam config env`; make install
 
-# Bootstrap
+# Patched Bootstrap with our theme
 RUN apt-get install -y npm
 RUN npm install -g grunt-cli
 RUN ln -s /usr/bin/nodejs /usr/bin/node
@@ -43,7 +43,7 @@ ADD bootstrap/ /root/bootstrap-3.2.0/less/
 RUN grunt dist
 
 # Opam Coq repository
-RUN opam repo add coq https://github.com/clarus/opam-coq-repo.git
+RUN opam repo add coq https://github.com/coq/repo-stable.git
 
 # Coq2Opam2Web
 ADD . /root/coq2opam2web
