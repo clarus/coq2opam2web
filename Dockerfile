@@ -2,7 +2,8 @@ FROM ubuntu
 MAINTAINER Guillaume Claret
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y gcc make m4 git
+RUN apt-get install -y gcc make git
+RUN apt-get install -y m4
 
 # OCaml
 RUN apt-get install -y ocaml camlp4-extra

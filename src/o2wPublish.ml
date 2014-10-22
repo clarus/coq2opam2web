@@ -16,8 +16,9 @@ let to_html =
         <p>The naming scheme for packages is <code>coq-package-name.MAJOR.MINOR.PATCH</code>. All names are prefixed by <code>coq-</code>. Names are in small caps, plus dashes or digits. The version number must contain exactly three numbers. We try to follow the <a href="http://semver.org/">SemVer</a> convention. For the dependencies, be cautious that new versions may not be backward compatible. This is especially true for Coq itself, so prefer to use rather precise version numbers for it.</p>
         <p>Only fixed releases are accepted (no development version). The should use the <a href="https://github.com/coq/repo-testing">testing repository</a> and <a href="https://github.com/coq/repo-unstable">unstable repository</a> for release candidates and development versions.</p>
 
+        <!-- TODO
         <h2>Workflow example</h2>
-        <p>We will create and publish a test project using OPAM.</p>
+        <p>We will create and publish a test project using OPAM.</p>-->
       </div>
     </div>
   >>
