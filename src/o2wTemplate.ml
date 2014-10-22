@@ -34,14 +34,14 @@ let create ~title ~header ~body ~depth =
   let title = <:html< $str:title$ >> in
   let css_files = [
     "ext/css/bootstrap.min.css";
-    "ext/js/google-code-prettify/prettify.css";
+    "ext/js/google-code-prettify/prettify.css"
   ] in
   let js_files = [
     "ext/js/jquery.min.js";
     "ext/js/google-code-prettify/prettify.js";
     "ext/js/bootstrap.min.js";
     "ext/js/site.js";
-    "ext/js/search.js";
+    "ext/js/search.js"
   ] in
   let prepend_root = prepend_root depth in
   let head_html =
